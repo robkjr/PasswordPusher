@@ -26,6 +26,7 @@ RUN gem install thor
 USER 1001
 WORKDIR ${APP_ROOT}
 
+ENV RACK_ENV=production
 ENV RAILS_ENV=production
 RUN bundle config set without 'development private test'
 RUN bundle config set deployment 'true'
