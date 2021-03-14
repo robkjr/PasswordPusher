@@ -3,9 +3,9 @@
 
 body {
   text-align: center;
-  background: #ffffffbb;
+  background: #6e6e6e;
   font-family: Tahoma, Georgia, Verdana, serif;
-  color: #ddd;
+  color: rgba(221, 221, 221, 0.829);
   width: 95%;
   font-size: 16px;
   margin-left: auto;
@@ -13,12 +13,12 @@ body {
 }
 
 a:link, a:visited, a:active {
-  color: #0059ff;
+  color: #ffffff;
   text-decoration: none;
 }
 
 a:hover {
-  color: #00CC00;
+  color: #2f669a;
   text-decoration: none;
 }
 
@@ -41,17 +41,17 @@ a:hover {
 }
 
 .normal-yellow-font {
-  color: #0059ff;
+  color: #2f669a;
 }
 
 .medium-yellow-font {
   font-size: 2em;
-  color: #0059ff;
+  color: #2f669a;
 }
 
 .large-yellow-font {
   font-size: 3em;
-  color: #0059ff;
+  color: #2f669a;
 }
 
 .footer {
