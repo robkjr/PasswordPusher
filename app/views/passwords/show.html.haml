@@ -1,15 +1,16 @@
+= link_to image_tag("RRK 2.gif", :style => "position: absolute; top: 0; right: 0; border: 0; z-index: 1;", :alt => "RRK Associates" ), "https://www.rrkassoc.com"
 - if @password.expired
   %p.large-yellow-font
-    We apologize but this secret link has expired.
+    We apologize but this link has expired.
   %p
     - if @password.deleted
-      This secret link was manually expired by one of its viewers and the password has been deleted from the database.
+      This link was manually expired by one of its viewers and the password has been deleted from the database.
     - elsif @password.views_remaining == 0
       == This secret link has hit its maximum view count (#{@password.expire_after_views}) and the password has been deleted from the database.
     - elsif @password.days_remaining == 0
       == This secret link has hit its maximum age (#{@password.expire_after_days} days) and the password has been deleted from the database.
   %p
-    If needed, please contact the person or organization who gave you this secret URL.
+    If you need assistance, please contact RRK Associates support.
 
 - else
   - if @first_view
@@ -20,9 +21,9 @@
         %button.copy-secret-url{ "data-clipboard-target" => "#secret_url" }
           = image_tag('button_up.png')
       %span.note
-        This note won't be shown again...
+        This link will not be shown again... 
         %br/
-        Don't believe me?  Go ahead.  Hit reload...
+        Be sure to copy the link before reloading this page.
   %p.normal-yellow-font
     Your password is...
 
@@ -33,7 +34,7 @@
     Copy to Clipboard
 
   %p.pwinstructions
-    Please obtain and securely store this password elsewhere, ideally in a password manager.
+    Please copy and securely store this password, ideally in a password manager.
 
   %p
     - if @password.views_remaining == 0
@@ -43,4 +44,4 @@
       == or #{pluralize(@password.views_remaining, 'more view')} (whichever occurs first).
   - if @password.deletable_by_viewer
     %p{ :style => 'font-size: .85em;' }
-      = link_to "Nah. I've got it. Delete this secret link now.", password_path, :id => @password.url_token, :method => :delete, :data => { :confirm => 'This will expire this secret link and remove the password from the database forever.  Are you sure?' }
+      = link_to "I have a copy please delete this link now.", password_path, :id => @password.url_token, :method => :delete, :data => { :confirm => 'This link will no longer be accessible and will remove the password from the database.  Are you sure?' }

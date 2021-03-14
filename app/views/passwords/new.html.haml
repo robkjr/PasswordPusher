@@ -1,10 +1,10 @@
-= link_to image_tag("forkme.png", :style => "position: absolute; top: 0; right: 0; border: 0; z-index: 1;", :alt => "RRK Associates" ), "https://www.rrkassoc.com"
+= link_to image_tag("RRK 2.gif", :style => "position: absolute; top: 0; right: 0; border: 0; z-index: 1;", :alt => "RRK Associates" ), "https://www.rrkassoc.com"
 = form_for @password do |f|
   %p
     %div.title
       %span.title RRK Associates
       %br
-      %span.tagline Password Notification Tool
+      %span.tagline Securely Distribute Passwords
   %p.payload
     = f.text_field(:payload, { :class => "password", :value => PAYLOAD_INITIAL_TEXT, :onfocus => "prepareTextField(this)", :onblur => "revertTextField(this)", :autocomplete => "off" })
   %p
